@@ -1,4 +1,7 @@
 # auto-self-diagnosis
+[![GitHub license](https://img.shields.io/github/license/SaidBySolo/auto-self-diagnosis)](https://github.com/SaidBySolo/auto-self-diagnosis/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/SaidBySolo/auto-self-diagnosis)](https://github.com/SaidBySolo/auto-self-diagnosis/stargazers)
+![GitHub All Releases](https://img.shields.io/github/downloads/SaidBySolo/auto-self-diagnosis/total)
 > 일어나서 자가진단하기 매우엿같아요
 
 ## 소스코드관련
