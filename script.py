@@ -12,7 +12,7 @@ else:
 with open('./info.json', 'r', encoding='utf-8') as r:
     info = json.load(r)
 
-driver.get('https://eduro.ice.go.kr/hcheck/index.jsp')
+driver.get(info['link'])
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="container"]/div/div/div/div[2]/div/a[2]/div').click()
 time.sleep(0.5)
