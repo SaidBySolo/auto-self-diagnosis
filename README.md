@@ -11,7 +11,7 @@
 
 ## 파일관련
 
-백신에서 안전하지 않다고 잡는데 웹드라이버를 제외하고 그대로 빌드시키고 릴리즈했습니다.  
+백신에서 안전하지 않다고 잡는데 웹드라이버넣고 그대로 빌드시키고 릴리즈했습니다.  
 걱정마시고 사용하시면됩니다.  
 [릴리즈 1.0 바이러스 토탈](https://www.virustotal.com/gui/file/055adf001392e2a8b66a7c3ed6c19393138d00e2522a8b9fb481b68428e6fffe/detection)  
 
@@ -23,7 +23,7 @@ Chrome 83 버전을 필요로합니다.
 
 ## 사용방법
 
-1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/1.0)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
+1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/2.0)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
 
 2. info.json을 메모장으로 엽니다.
 
