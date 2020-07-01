@@ -22,6 +22,10 @@ Chrome 83 버전을 필요로합니다.
 
 5. 프로그램을 실행해주세요
 
+## 문제발생
+
+[이슈](https://github.com/SaidBySolo/auto-self-diagnosis/issues)또는 Pull Request넣어주세요
+
 ## 면책조항
 
 이 프로그램 및 소스코드를 사용하는 불이익은 사용자 본인에게있습니다.
