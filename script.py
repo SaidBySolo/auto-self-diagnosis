@@ -15,7 +15,7 @@ print("로드완료!\n")
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
-options.add_argument('window-size=1280x720')
+options.add_argument('window-size=1920x1080')
 options.add_argument(
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -79,6 +79,7 @@ if not os.path.exists("./screenshot"):
     print("스크린샷을 찍을게요!\n")
     driver.save_screenshot(f"./screenshot/{nowtime}_screenshot.png")
     print("자가진단이 완료되었어요!\n")
+    driver.quit()
 else:
     print("스크린샷을 찍을게요!\n")
     driver.save_screenshot(f"./screenshot/{nowtime}_screenshot.png")
