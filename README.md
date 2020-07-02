@@ -4,6 +4,8 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/SaidBySolo/auto-self-diagnosis/total)
 > 일어나서 자가진단하기 매우엿같아요
 
+![이미지](https://i.imgur.com/76zCDVn.gif)  
+
 ## 소스코드관련
 
 현재 ChromeWebdriver로 잡아두었는데
