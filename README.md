@@ -4,6 +4,8 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/SaidBySolo/auto-self-diagnosis/total)
 > 일어나서 자가진단하기 매우엿같아요
 
+![이미지](https://i.imgur.com/76zCDVn.gif)  
+
 ## 소스코드관련
 
 현재 ChromeWebdriver로 잡아두었는데
@@ -27,11 +29,13 @@ Chrome 83 버전을 필요로합니다.
 
 2. info.json을 메모장으로 엽니다.
 
-3. 자신의 학교이름을 본명으로 그대로적으시고 나머지칸도 수정해주세요
+3. https://eduro.ice.go.kr/hcheck/index.jsp 과같은 메인페이지 링크를 적어주세요
 
-4. 수정한것을 **UTF-8**로 저장합니다. 일반적으로 저장하시면 UTF-8로 저장이될것입니다.
+4. 자신의 학교이름을 본명으로 그대로적으시고 나머지칸도 수정해주세요
 
-5. 프로그램을 실행해주세요
+5. 수정한것을 **UTF-8**로 저장합니다. 일반적으로 저장하시면 UTF-8로 저장이될것입니다.
+
+6. 프로그램을 실행해주세요
 
 ## 문제발생
 
@@ -40,5 +44,11 @@ Chrome 83 버전을 필요로합니다.
 ## 면책조항
 
 이 프로그램 및 소스코드를 사용하는 불이익은 사용자 본인에게있습니다.
+
+## 라이센스
+
+이 소스코드는 [MIT LICENSE](LICENSE)를 따릅니다.
+
+chromedriver는 [BSD 3-Clause](LICENSE.chromedriver)에 따라 배포됩니다.
    
 
