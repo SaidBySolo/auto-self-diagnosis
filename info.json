@@ -2,5 +2,6 @@
     "link":"자가진단 사이트",
     "schoolname":"학교 이름",
     "name":"성명",
-    "birth":"생년월일"
+    "birth":"생년월일",
+    "preschool":false
 }
