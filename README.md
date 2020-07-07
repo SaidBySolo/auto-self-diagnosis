@@ -25,7 +25,7 @@ Chrome 83 버전을 필요로합니다.
 
 ## 사용방법
 
-1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/2.0.1)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
+1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/3.0.)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
 
 2. info.json을 메모장으로 엽니다.
 
