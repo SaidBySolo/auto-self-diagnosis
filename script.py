@@ -1,9 +1,10 @@
-from selenium import webdriver
-import json
-import time
 import datetime
+import json
 import os
 import sys
+import time
+
+from selenium import webdriver
 
 now = datetime.datetime.now()
 nowtime = now.strftime("%Y-%m-%d_%H-%M-%S")
