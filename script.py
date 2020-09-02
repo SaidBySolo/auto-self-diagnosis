@@ -65,6 +65,11 @@ time.sleep(0.5)
 print("체크중입니다.\n")
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 time.sleep(0.5)
+try:
+    driver.find_element_by_xpath('//*[@id="popupConfirm"]').click()
+    time.sleep(1)
+except:
+    pass
 driver.find_element_by_xpath('//*[@id="rspns011"]').click()
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="rspns02"]').click()
