@@ -32,7 +32,7 @@ else:
 
 print("자가진단 홈페이지에 접속합니다.\n")
 driver.get(info['link'])
-print("성공적으로 접속됬습니다.\n")
+print("성공적으로 접속됐습니다.\n")
 
 driver.find_element_by_xpath('//*[@id="container"]/div/div/div/div[2]/div/a[2]/div').click()
 time.sleep(0.5)
