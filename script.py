@@ -53,14 +53,14 @@ try:
     if region == None:
         driver.quit()
         raise Exception("지역 잘못기재로인한 종료")
-    level = region.get(info['region'])
-    if region == None:
+    level = level.get(info['level'])
+    if level == None:
         driver.quit()
         raise Exception("학교 소속 잘못기재로인한 종료")
     driver.find_element_by_xpath('//*[@id="btnConfirm2"]').click()
     driver.find_element_by_xpath('//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button').click()
-    driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select/option[6]').click()
-    driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[2]/td/select/option[4]').click()
+    driver.find_element_by_xpath(f'//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select/option[{region}]').click()
+    driver.find_element_by_xpath(f'//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[2]/td/select/option[{level}]').click()
     driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[1]/input').send_keys(info['schoolname'])
     driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[2]/button').click()
     time.sleep(0.5)
