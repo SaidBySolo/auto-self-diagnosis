@@ -13,12 +13,12 @@ options.add_argument("headless")
 options.add_argument("window-size=1920x1080")
 options.add_argument("Chrome/85.0.4183.83")
 options.add_argument("disable-gpu")
-if getattr(sys, 'frozen', False): 
+if getattr(sys, 'frozen', False):
     chromedriver_path = os.path.join(sys._MEIPASS, "chromedriver.exe")
     driver = webdriver.Chrome(chromedriver_path, options=options)
 else:
     driver = webdriver.Chrome('./chromedriver.exe', options=options)
-print('자가진단 사이트에 접속합니다\n')    
+print('자가진단 사이트에 접속합니다\n')
 driver.get('https://hcs.eduro.go.kr/#/loginHome')
 print('접속 완료!\n')
 print('정보를 제출합니다.\n')
@@ -58,19 +58,27 @@ try:
         driver.quit()
         raise Exception("학교 소속 잘못기재로인한 종료")
     driver.find_element_by_xpath('//*[@id="btnConfirm2"]').click()
-    driver.find_element_by_xpath('//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button').click()
-    driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select/option[6]').click()
-    driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[2]/td/select/option[4]').click()
-    driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[1]/input').send_keys(info['schoolname'])
-    driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[2]/button').click()
+    driver.find_element_by_xpath(
+        '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button').click()
+    driver.find_element_by_xpath(
+        '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select/option[6]').click()
+    driver.find_element_by_xpath(
+        '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[2]/td/select/option[4]').click()
+    driver.find_element_by_xpath(
+        '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[1]/input').send_keys(info['schoolname'])
+    driver.find_element_by_xpath(
+        '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[2]/button').click()
     time.sleep(0.5)
     action = webdriver.ActionChains(driver)
     school = driver.find_element_by_class_name('layerSchoolArea')
     action.move_to_element(school)
     school.click()
-    driver.find_element_by_xpath('//*[@id="softBoardListLayer"]/div[2]/div[2]/input').click()
-    driver.find_element_by_xpath('//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input').send_keys(info['name'])
-    driver.find_element_by_xpath('//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input').send_keys(info['birth'])
+    driver.find_element_by_xpath(
+        '//*[@id="softBoardListLayer"]/div[2]/div[2]/input').click()
+    driver.find_element_by_xpath(
+        '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input').send_keys(info['name'])
+    driver.find_element_by_xpath(
+        '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input').send_keys(info['birth'])
     driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 except Exception as e:
     print('학교이름, 본인실명, 생년월일을 제출하던 도중 오류가 발생하였습니다! 아래의 내용을 이슈에 넣어주세요!\n')
@@ -94,7 +102,8 @@ print('자가진단을 제출하겠습니다\n')
 try:
     time.sleep(1.5)
     action = webdriver.ActionChains(driver)
-    user = driver.find_element_by_xpath('//*[@id="container"]/div[2]/section[2]/div[2]/ul/li/a/button')
+    user = driver.find_element_by_xpath(
+        '//*[@id="container"]/div[2]/section[2]/div[2]/ul/li/a/button')
     action.move_to_element(user)
     user.click()
     time.sleep(2)
@@ -105,7 +114,7 @@ try:
         '//*[@id="container"]/div[2]/div/div[2]/div[2]/dl[4]/dd/ul/li[1]/label',
         '//*[@id="container"]/div[2]/div/div[2]/div[2]/dl[5]/dd/ul/li[1]/label',
         '//*[@id="btnConfirm"]'
-        ]
+    ]
     for i in xpath:
         driver.find_element_by_xpath(i).click()
         time.sleep(0.5)
@@ -118,9 +127,9 @@ print('제출 완료!')
 if info['screen'] == True:
     print("스크린샷을 준비할게요!\n")
     if not os.path.exists("./screenshot"):
-        print("스크린샷 폴더가없는거같아요. 생성할게요!\n")    
+        print("스크린샷 폴더가없는거같아요. 생성할게요!\n")
         os.mkdir("./screenshot")
-    print("스크린샷을 찍을게요!\n")   
+    print("스크린샷을 찍을게요!\n")
     now = datetime.datetime.now()
     nowtime = now.strftime('%Y-%m-%d_%H-%M-%S')
     driver.save_screenshot(f"./screenshot/{nowtime}_screenshot.png")
