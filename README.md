@@ -1,4 +1,5 @@
 # auto-self-diagnosis
+
 [![GitHub license](https://img.shields.io/github/license/SaidBySolo/auto-self-diagnosis)](https://github.com/SaidBySolo/auto-self-diagnosis/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/SaidBySolo/auto-self-diagnosis)](https://github.com/SaidBySolo/auto-self-diagnosis/stargazers)
 ![GitHub All Releases](https://img.shields.io/github/downloads/SaidBySolo/auto-self-diagnosis/total)
@@ -25,19 +26,15 @@ Chrome 83 버전을 필요로합니다.
 
 ## 사용방법
 
-1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/3.0.0)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
+1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/4.0.0)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
 
 2. info.json을 메모장으로 엽니다.
 
-3. https://eduro.ice.go.kr/hcheck/index.jsp 과같은 메인페이지 링크를 적어주세요
+3. 학교이름 및 모든 사항을 맞게 수정해주세요
 
-4. 자신의 학교이름을 본명으로 그대로적으시고 나머지칸도 수정해주세요
+4. 수정한것을 **UTF-8**로 저장합니다. 일반적으로 저장하시면 UTF-8로 저장이 될것입니다.
 
-5. 만약 병셜유치원이 같이있는 초등학교라면 ``preschool`` 부분을 ``true``로 변경해주세요
-
-6. 수정한것을 **UTF-8**로 저장합니다. 일반적으로 저장하시면 UTF-8로 저장이될것입니다.
-
-7. 프로그램을 실행해주세요
+5. 프로그램을 실행해주세요
 
 ## 문제발생
 
@@ -53,5 +50,3 @@ Chrome 83 버전을 필요로합니다.
 이 소스코드는 [MIT LICENSE](LICENSE)를 따릅니다.
 
 chromedriver는 [BSD 3-Clause](LICENSE.chromedriver)에 따라 배포됩니다.
-   
-
