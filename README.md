@@ -1,4 +1,5 @@
 # auto-self-diagnosis
+
 [![GitHub license](https://img.shields.io/github/license/SaidBySolo/auto-self-diagnosis)](https://github.com/SaidBySolo/auto-self-diagnosis/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/SaidBySolo/auto-self-diagnosis)](https://github.com/SaidBySolo/auto-self-diagnosis/stargazers)
 ![GitHub All Releases](https://img.shields.io/github/downloads/SaidBySolo/auto-self-diagnosis/total)
@@ -10,7 +11,6 @@
 
 현재 ChromeWebdriver로 잡아두었는데
 헤드리스 브라우저를 사용하셔도 큰문제는 없을거같습니다.
-본 개발자는 Chrome 브라우저를 추천드립니다
 
 ## 파일관련
 
@@ -22,17 +22,17 @@ Malicious가 있는데 그냥 알려지지않은 파일이라 잡는거같네요
 
 ## 의존성
 
-Chrome 85 버전을 필요로합니다.
+Chrome 83 버전을 필요로합니다.
 
 ## 사용방법
 
-1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/3.0.0)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
+1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/4.0.0)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
 
 2. info.json을 메모장으로 엽니다.
 
-3. 자신의 학교이름을 본명으로 그대로적으시고 나머지칸도 수정해주세요
+3. 학교이름 및 모든 사항을 맞게 수정해주세요
 
-4. 수정한것을 **UTF-8**로 저장합니다. 일반적으로 저장하시면 UTF-8로 저장이될것입니다.
+4. 수정한것을 **UTF-8**로 저장합니다. 일반적으로 저장하시면 UTF-8로 저장이 될것입니다.
 
 5. 프로그램을 실행해주세요
 
@@ -50,5 +50,3 @@ Chrome 85 버전을 필요로합니다.
 이 소스코드는 [MIT LICENSE](LICENSE)를 따릅니다.
 
 chromedriver는 [BSD 3-Clause](LICENSE.chromedriver)에 따라 배포됩니다.
-   
-
