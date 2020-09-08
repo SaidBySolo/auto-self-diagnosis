@@ -34,20 +34,17 @@ print("성공적으로 접속됐습니다.\n")
 print("기본 학교 정보를 제출합니다.\n")
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button'
-).click()
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button').click()
 time.sleep(0.5)
 Select(
     driver.find_element_by_xpath(
         '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select'
-    )
-).select_by_visible_text(info["C/P"])
+    )).select_by_visible_text(info["C/P"])
 time.sleep(0.5)
 Select(
     driver.find_element_by_xpath(
         '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[2]/td/select'
-    )
-).select_by_visible_text(info["SL"])
+    )).select_by_visible_text(info["SL"])
 time.sleep(0.5)
 driver.find_element_by_xpath(
     '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[1]/input'
@@ -62,26 +59,24 @@ driver.find_element_by_css_selector(
 ).click()
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="softBoardListLayer"]/div[2]/div[2]/input'
-).click()
+    '//*[@id="softBoardListLayer"]/div[2]/div[2]/input').click()
 print("제출완료\n")
 print("이름 및 생년월일을 제출합니다.\n")
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input'
-).send_keys(info["NM"])
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input').send_keys(
+        info["NM"])
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input'
-).send_keys(info["BH"])
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input').send_keys(
+        info["BH"])
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 print("제출완료\n")
 print("비밀번호를 제출합니다.\n")
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="WriteInfoForm"]/table/tbody/tr/td/input'
-).send_keys(info["PD"])
+    '//*[@id="WriteInfoForm"]/table/tbody/tr/td/input').send_keys(info["PD"])
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 print("제출완료\n")
