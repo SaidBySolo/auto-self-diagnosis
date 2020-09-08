@@ -5,6 +5,7 @@ import sys
 import time
 
 from selenium import webdriver
+from selenium.webdriver.support.select import Select
 
 now = datetime.datetime.now()
 nowtime = now.strftime("%Y-%m-%d_%H-%M-%S")
@@ -15,12 +16,7 @@ with open("./info.json", "r", encoding="utf-8") as r:
 print("로드완료!\n")
 
 options = webdriver.ChromeOptions()
-options.add_argument("headless")
 options.add_argument("window-size=1920x1080")
-options.add_argument("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                     "AppleWebKit/537.36 (KHTML, like Gecko) "
-                     "Chrome/83.0.4103.116 "
-                     "Safari/537.36")
 options.add_argument("disable-gpu")
 
 if getattr(sys, "frozen", False):
@@ -30,70 +26,95 @@ else:
     driver = webdriver.Chrome("./chromedriver.exe", options=options)
 
 print("자가진단 홈페이지에 접속합니다.\n")
-driver.get(info["link"])
+driver.get("https://hcs.eduro.go.kr/#/loginHome")
+time.sleep(0.5)
+driver.find_element_by_xpath('//*[@id="btnConfirm2"]').click()
 print("성공적으로 접속됐습니다.\n")
 
+print("기본 학교 정보를 제출합니다.\n")
+time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="container"]/div/div/div/div[2]/div/a[2]/div').click()
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button'
+).click()
 time.sleep(0.5)
-driver.find_element_by_xpath('//*[@id="btnSrchSchul"]').click()
-time.sleep(0.5)
-driver.switch_to.window(driver.window_handles[-1])
-print("학교이름을 제출합니다.")
-time.sleep(0.5)
-driver.find_element_by_xpath('//*[@id="schulNm"]').send_keys(
-    info["schoolname"])
-time.sleep(0.5)
-if info["preschool"] is True:
+Select(
     driver.find_element_by_xpath(
-        '//*[@id="infoForm"]/div[1]/p/span[3]/button').click()
+        '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select'
+    )
+).select_by_visible_text(info["C/P"])
+time.sleep(0.5)
+Select(
     driver.find_element_by_xpath(
-        '//*[@id="infoForm"]/div[2]/table/tbody/tr[2]/td[1]/a').click()
-else:
-    driver.find_element_by_xpath(
-        '//*[@id="infoForm"]/div[1]/p/span[3]/button').click()
-    driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
+        '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[2]/td/select'
+    )
+).select_by_visible_text(info["SL"])
 time.sleep(0.5)
-print("제출완료!\n")
-driver.switch_to.window(driver.window_handles[0])
-print("생년월일과 이름을 제출합니다.\n")
-driver.find_element_by_xpath('//*[@id="pName"]').send_keys(info["name"])
+driver.find_element_by_xpath(
+    '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[1]/input'
+).send_keys(info["SN"])
 time.sleep(0.5)
-driver.find_element_by_xpath('//*[@id="frnoRidno"]').send_keys(info["birth"])
-print("완료!\n")
+driver.find_element_by_xpath(
+    '//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[3]/td[2]/button'
+).click()
+time.sleep(2)
+driver.find_element_by_css_selector(
+    "#softBoardListLayer > div.layerContentsWrap > div.layerSchoolSelectWrap > ul"
+).click()
 time.sleep(0.5)
-print("체크중입니다.\n")
-driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
+driver.find_element_by_xpath(
+    '//*[@id="softBoardListLayer"]/div[2]/div[2]/input'
+).click()
+print("제출완료\n")
+print("이름 및 생년월일을 제출합니다.\n")
 time.sleep(0.5)
-try:
-    driver.find_element_by_xpath('//*[@id="popupConfirm"]').click()
-    time.sleep(1)
-except:
-    pass
-driver.find_element_by_xpath('//*[@id="rspns011"]').click()
+driver.find_element_by_xpath(
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input'
+).send_keys(info["NM"])
 time.sleep(0.5)
-driver.find_element_by_xpath('//*[@id="rspns02"]').click()
-time.sleep(0.5)
-driver.find_element_by_xpath('//*[@id="rspns070"]').click()
-time.sleep(0.5)
-driver.find_element_by_xpath('//*[@id="rspns080"]').click()
-time.sleep(0.5)
-driver.find_element_by_xpath('//*[@id="rspns090"]').click()
+driver.find_element_by_xpath(
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input'
+).send_keys(info["BH"])
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
-print("전부 체크가 완료되고 제출되었어요!\n")
-
-print("스크린샷을 준비할게요!\n")
-
-if not os.path.exists("./screenshot"):
-    print("스크린샷 폴더가없는거같아요. 생성할게요!\n")
-    os.mkdir("./screenshot")
-    print("스크린샷을 찍을게요!\n")
-    driver.save_screenshot(f"./screenshot/{nowtime}_screenshot.png")
-    print("자가진단이 완료되었어요!\n")
-    driver.quit()
-else:
-    print("스크린샷을 찍을게요!\n")
-    driver.save_screenshot(f"./screenshot/{nowtime}_screenshot.png")
-    print("자가진단이 완료되었어요!\n")
-    driver.quit()
+print("제출완료\n")
+print("비밀번호를 제출합니다.\n")
+time.sleep(0.5)
+driver.find_element_by_xpath(
+    '//*[@id="WriteInfoForm"]/table/tbody/tr/td/input'
+).send_keys(info["PD"])
+time.sleep(0.5)
+driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
+print("제출완료\n")
+print("사용자를 선택합니다.\n")
+time.sleep(2)
+driver.find_element_by_css_selector(
+    "#container > div:nth-child(2) > section.memberWrap > div:nth-child(2) > ul > li > a > button"
+).click()
+print("선택완료\n")
+print("항목을 체킹합니다.\n")
+time.sleep(2)
+driver.find_element_by_css_selector(
+    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(1) > dd > ul > li:nth-child(1) > label"
+).click()
+time.sleep(0.5)
+driver.find_element_by_css_selector(
+    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(2) > dd > ul > li:nth-child(1) > label"
+).click()
+time.sleep(0.5)
+driver.find_element_by_css_selector(
+    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(3) > dd > ul > li:nth-child(1) > label"
+).click()
+time.sleep(0.5)
+driver.find_element_by_css_selector(
+    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(4) > dd > ul > li:nth-child(1) > label"
+).click()
+time.sleep(0.5)
+driver.find_element_by_css_selector(
+    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(5) > dd > ul > li:nth-child(1) > label"
+).click()
+time.sleep(0.5)
+driver.find_element_by_css_selector(
+    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(5) > dd > ul > li:nth-child(1) > label"
+).click()
+driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
+print("체킹완료\n")
