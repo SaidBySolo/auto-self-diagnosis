@@ -1,10 +1,10 @@
 {
-    "schoolname":"학교이름",
-    "level": "본인의 학교 소속 (예를 들면 중학교, 초등학교 같은것을 적어주세요!)",
-    "region": "본인지역",
-    "name":"본인 실명",
-    "birth":"생년월일",
-    "passwd": "자가진단 비밀번호 (위 매크로 실행전 먼저 비밀번호를 등록해주세요!)",
-    "preschool":false,
-    "screen": true
+  "schoolname": "학교이름",
+  "level": "본인의 학교 소속 (예를 들면 중학교, 초등학교 같은것을 적어주세요!)",
+  "region": "본인지역",
+  "name": "본인 실명",
+  "birth": "생년월일",
+  "passwd": "자가진단 비밀번호 (위 매크로 실행전 먼저 비밀번호를 등록해주세요!)",
+  "preschool": false,
+  "screen": true
 }
