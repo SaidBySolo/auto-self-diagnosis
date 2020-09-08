@@ -1,9 +1,10 @@
-from selenium import webdriver
-import json
-import time
 import datetime
+import json
 import os
 import sys
+import time
+
+from selenium import webdriver
 
 print("설정파일을 엽니다!\n")
 with open("./info.json", "r", encoding="utf-8") as r:
