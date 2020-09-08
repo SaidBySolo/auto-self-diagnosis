@@ -65,6 +65,7 @@ driver.find_element_by_xpath(
     '//*[@id="softBoardListLayer"]/div[2]/div[2]/input'
 ).click()
 print("제출완료\n")
+
 print("이름 및 생년월일을 제출합니다.\n")
 time.sleep(0.5)
 driver.find_element_by_xpath(
@@ -77,6 +78,7 @@ driver.find_element_by_xpath(
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 print("제출완료\n")
+
 print("비밀번호를 제출합니다.\n")
 time.sleep(0.5)
 driver.find_element_by_xpath(
@@ -85,13 +87,15 @@ driver.find_element_by_xpath(
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 print("제출완료\n")
+
 print("사용자를 선택합니다.\n")
 time.sleep(2)
 driver.find_element_by_css_selector(
     "#container > div:nth-child(2) > section.memberWrap > div:nth-child(2) > ul > li > a > button"
 ).click()
 print("선택완료\n")
-print("항목을 체킹합니다.\n")
+
+print("항목을 체크합니다.\n")
 time.sleep(2)
 driver.find_element_by_css_selector(
     "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(1) > dd > ul > li:nth-child(1) > label"
@@ -117,4 +121,17 @@ driver.find_element_by_css_selector(
     "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(5) > dd > ul > li:nth-child(1) > label"
 ).click()
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
-print("체킹완료\n")
+print("체크 완료\n")
+
+if not os.path.exists("./screenshot"):
+    print("스크린샷 폴더가없는거같아요. 생성할게요!\n")
+    os.mkdir("./screenshot")
+    print("스크린샷을 찍을게요!\n")
+    driver.save_screenshot(f"./screenshot/{nowtime}_screenshot.png")
+    print("자가진단이 완료되었어요!\n")
+    driver.quit()
+else:
+    print("스크린샷을 찍을게요!\n")
+    driver.save_screenshot(f"./screenshot/{nowtime}_screenshot.png")
+    print("자가진단이 완료되었어요!\n")
+    driver.quit()
