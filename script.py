@@ -16,6 +16,7 @@ with open("./info.json", "r", encoding="utf-8") as r:
 print("로드완료!\n")
 
 options = webdriver.ChromeOptions()
+options.add_argument("headless")
 options.add_argument("window-size=1920x1080")
 options.add_argument("disable-gpu")
 
