@@ -55,8 +55,7 @@ try:
         raise Exception("학교 소속 잘못기재로인한 종료")
     driver.find_element_by_xpath('//*[@id="btnConfirm2"]').click()
     driver.find_element_by_xpath(
-        '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button'
-    ).click()
+        '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button').click()
     driver.find_element_by_xpath(
         f'//*[@id="softBoardListLayer"]/div[2]/div[1]/table/tbody/tr[1]/td/select/option[{region}]'
     ).click()
@@ -75,14 +74,13 @@ try:
     action.move_to_element(school)
     school.click()
     driver.find_element_by_xpath(
-        '//*[@id="softBoardListLayer"]/div[2]/div[2]/input'
-    ).click()
+        '//*[@id="softBoardListLayer"]/div[2]/div[2]/input').click()
     driver.find_element_by_xpath(
-        '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input'
-    ).send_keys(info["name"])
+        '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input').send_keys(
+            info["name"])
     driver.find_element_by_xpath(
-        '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input'
-    ).send_keys(info["birth"])
+        '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input').send_keys(
+            info["birth"])
     driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 except Exception as e:
     print("학교이름, 본인실명, 생년월일을 제출하던 도중 오류가 발생하였습니다! 아래의 내용을 이슈에 넣어주세요!\n")
@@ -107,8 +105,7 @@ try:
     time.sleep(1.5)
     action = webdriver.ActionChains(driver)
     user = driver.find_element_by_xpath(
-        '//*[@id="container"]/div[2]/section[2]/div[2]/ul/li/a/button'
-    )
+        '//*[@id="container"]/div[2]/section[2]/div[2]/ul/li/a/button')
     action.move_to_element(user)
     user.click()
     time.sleep(2)
