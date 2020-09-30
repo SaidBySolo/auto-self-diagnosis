@@ -1,3 +1,5 @@
+@ echo Install dependency
+@ pip install -r requirements.txt
 @ echo Install pyinstaller
 @ pip install -r requirements.txt
 @ echo Install pyinstaller
