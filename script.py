@@ -123,6 +123,7 @@ for i in range(1, 6):
         f"#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child({i}) > dd > ul > li:nth-child(1) > label"
     ).click()
 
+driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
 print("체크 완료\n")
 
 if not os.path.exists("./screenshot"):
