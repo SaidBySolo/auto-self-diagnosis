@@ -101,7 +101,7 @@ try:
     alert = driver.switch_to.alert
     message = alert.text
     left_time = re.findall(r"약(\d)분", message)[0]
-    print(f"알림이 감지되었습니다. {left_time}후에 다시 시도합니다.\n")
+    print(f"알림이 감지되었습니다. {left_time}분 후에 다시 시도합니다.\n")
     alert.accept()
 except NoAlertPresentException:
     print("알림이 발견되지 않았습니다. 계속 진행합니다.\n")
