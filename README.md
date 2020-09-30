@@ -50,13 +50,15 @@ Windows 기준 입니다.
 
 * chrome버전과 맞는 chromedriver
 
-### 실행방법
+### 개발 세팅
 
 ```sh
 git clone https://github.com/SaidBySolo/auto-self-diagnosis.git
+```
 
-cd auto-self-diagnosis
+### 실행
 
+```sh
 python script.py
 ```
 
