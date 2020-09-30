@@ -7,12 +7,14 @@
 
 ![이미지](https://i.imgur.com/76zCDVn.gif)  
 
-## 소스코드관련
+## 일반 사용자
+
+### 소스코드관련
 
 현재 ChromeWebdriver로 잡아두었는데
 헤드리스 브라우저를 사용하셔도 큰문제는 없을거같습니다.
 
-## 파일관련
+### 파일관련
 
 백신에서 안전하지 않다고 잡는데 웹드라이버넣고 그대로 빌드시키고 릴리즈했습니다.  
 걱정마시고 사용하시면됩니다.  
@@ -20,11 +22,11 @@
 
 Malicious가 있는데 그냥 알려지지않은 파일이라 잡는거같네요
 
-## 의존성
+### 의존성
 
 Chrome 85 버전을 필요로합니다.
 
-## 사용방법
+### 사용방법
 
 1. [링크](https://github.com/SaidBySolo/auto-self-diagnosis/releases/tag/4.0.0)에서 auto-self-diagnosis파일을 다운로드하고 압축을 풉니다.
 
@@ -36,16 +38,46 @@ Chrome 85 버전을 필요로합니다.
 
 5. 프로그램을 실행해주세요
 
-## 문제발생
+## 개발자용
+
+개발환경은 Windows입니다.
+
+### 의존성
+
+* CPython 3.8+
+
+* requirements.txt 참고
+
+* chrome버전과 맞는 chromedriver
+
+### 실행방법
+
+```sh
+git clone https://github.com/SaidBySolo/auto-self-diagnosis.git
+
+cd auto-self-diagnosis
+
+python script.py
+```
+
+### exe 빌드
+
+```sh
+./make_exe.bat
+```
+
+## 기타
+
+### 문제발생
 
 [이슈](https://github.com/SaidBySolo/auto-self-diagnosis/issues)또는 Pull Request넣어주세요
 
-## 면책조항
+### 면책조항
 
 이 프로그램 및 소스코드를 사용하는 불이익은 사용자 본인에게있습니다.  
 저작권자와 기여자는 이 소스코드를 '있는 그대로' 제공하며 어떠한 보증도 하지않습니다.
 
-## 라이센스
+### 라이센스
 
 이 소스코드는 [MIT LICENSE](LICENSE)를 따릅니다.
 
