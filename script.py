@@ -35,7 +35,7 @@ print("성공적으로 접속됐습니다.\n")
 print("기본 학교 정보를 제출합니다.\n")
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="WriteInfoForm"]/table/tbody/tr[1]/td/button'
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/button'
 ).click()
 time.sleep(0.5)
 Select(
@@ -70,11 +70,11 @@ print("제출완료\n")
 print("이름 및 생년월일을 제출합니다.\n")
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="WriteInfoForm"]/table/tbody/tr[2]/td/input'
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input'
 ).send_keys(info["NM"])
 time.sleep(0.5)
 driver.find_element_by_xpath(
-    '//*[@id="WriteInfoForm"]/table/tbody/tr[3]/td/input'
+    '//*[@id="WriteInfoForm"]/table/tbody/tr[4]/td/input'
 ).send_keys(info["BH"])
 time.sleep(0.5)
 driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
@@ -92,7 +92,7 @@ print("제출완료\n")
 print("사용자를 선택합니다.\n")
 time.sleep(2)
 driver.find_element_by_css_selector(
-    "#container > div:nth-child(2) > section.memberWrap > div:nth-child(2) > ul > li > a > button"
+    "#container > div:nth-child(1) > section.memberWrap > div:nth-child(2) > ul > li > a > button"
 ).click()
 print("선택완료\n")
 
