@@ -1,13 +1,13 @@
 import datetime
 import json
 import os
+import re
 import sys
 import time
-import re
 
 from selenium import webdriver
-from selenium.webdriver.support.select import Select
 from selenium.common.exceptions import NoAlertPresentException
+from selenium.webdriver.support.select import Select
 
 now = datetime.datetime.now()
 nowtime = now.strftime("%Y-%m-%d_%H-%M-%S")
