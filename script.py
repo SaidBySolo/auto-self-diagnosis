@@ -3,9 +3,11 @@ import json
 import os
 import sys
 import time
+import re
 
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
+from selenium.common.exceptions import NoAlertPresentException
 
 now = datetime.datetime.now()
 nowtime = now.strftime("%Y-%m-%d_%H-%M-%S")
@@ -94,34 +96,33 @@ time.sleep(2)
 driver.find_element_by_css_selector(
     "#container > div:nth-child(1) > section.memberWrap > div:nth-child(2) > ul > li > a > button"
 ).click()
+
+try:
+    alert = driver.switch_to.alert
+    message = alert.text
+    left_time = re.findall(r"약(\d)분", message)[0]
+    print(f"알림이 감지되었습니다. {left_time}후에 다시 시도합니다.\n")
+    alert.accept()
+except NoAlertPresentException:
+    print("알림이 발견되지 않았습니다. 계속 진행합니다.\n")
+else:
+    time.sleep(int(left_time) * 60)
+    driver.find_element_by_css_selector(
+        "#container > div:nth-child(1) > section.memberWrap > div:nth-child(2) > ul > li > a > button"
+    ).click()
+
+
 print("선택완료\n")
 
 print("항목을 체크합니다.\n")
 time.sleep(2)
-driver.find_element_by_css_selector(
-    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(1) > dd > ul > li:nth-child(1) > label"
-).click()
-time.sleep(0.5)
-driver.find_element_by_css_selector(
-    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(2) > dd > ul > li:nth-child(1) > label"
-).click()
-time.sleep(0.5)
-driver.find_element_by_css_selector(
-    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(3) > dd > ul > li:nth-child(1) > label"
-).click()
-time.sleep(0.5)
-driver.find_element_by_css_selector(
-    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(4) > dd > ul > li:nth-child(1) > label"
-).click()
-time.sleep(0.5)
-driver.find_element_by_css_selector(
-    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(5) > dd > ul > li:nth-child(1) > label"
-).click()
-time.sleep(0.5)
-driver.find_element_by_css_selector(
-    "#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child(5) > dd > ul > li:nth-child(1) > label"
-).click()
-driver.find_element_by_xpath('//*[@id="btnConfirm"]').click()
+
+for i in range(1, 6):
+    time.sleep(0.5)
+    driver.find_element_by_css_selector(
+        f"#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child({i}) > dd > ul > li:nth-child(1) > label"
+    ).click()
+
 print("체크 완료\n")
 
 if not os.path.exists("./screenshot"):
