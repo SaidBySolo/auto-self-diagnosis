@@ -117,7 +117,7 @@ print("선택완료\n")
 print("항목을 체크합니다.\n")
 time.sleep(2)
 
-for i in range(1, 6):
+for i in range(1, 4):
     time.sleep(0.5)
     driver.find_element_by_css_selector(
         f"#container > div.subpage > div > div:nth-child(2) > div.survey_question > dl:nth-child({i}) > dd > ul > li:nth-child(1) > label"
