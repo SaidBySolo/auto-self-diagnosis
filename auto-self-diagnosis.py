@@ -94,7 +94,7 @@ print("제출완료\n")
 print("사용자를 선택합니다.\n")
 time.sleep(2)
 driver.find_element_by_css_selector(
-    "#container > div:nth-child(1) > section.memberWrap > div:nth-child(2) > ul > li > a > button"
+    "#container > div > section.memberWrap > div:nth-child(2) > ul > li > a > em"
 ).click()
 
 try:
